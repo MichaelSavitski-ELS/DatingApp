@@ -1,3 +1,4 @@
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { appRoutes } from './routes';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -33,7 +35,8 @@ export function tokentGetter() {
       MemberListComponent,
       ListsComponent,
       MessagesComponent,
-      MemberCardComponent
+      MemberCardComponent,
+      MemberDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -41,6 +44,7 @@ export function tokentGetter() {
       FormsModule,
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
+      TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
          config: {

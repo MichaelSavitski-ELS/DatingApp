@@ -30,8 +30,9 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { FileUploadModule } from 'ng2-file-upload';
+import { TimeagoModule } from 'ngx-timeago';
 
-export function tokentGetter() {
+export function tokenGetter() {
    return localStorage.getItem('token');
 }
 
@@ -69,10 +70,11 @@ export class CustomHammerConfig extends HammerGestureConfig {
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),
+      TimeagoModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
          config: {
-            tokenGetter: tokentGetter,
+            tokenGetter: tokenGetter,
             allowedDomains: ['localhost:5000'],
             disallowedRoutes: ['localhost:5000/api/auth']
          }

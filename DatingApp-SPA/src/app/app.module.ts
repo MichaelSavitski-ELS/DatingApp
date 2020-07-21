@@ -32,6 +32,7 @@ import { NgxGalleryModule } from 'ngx-gallery-9';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -68,6 +69,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       FormsModule,
       ReactiveFormsModule,
       BrowserAnimationsModule,
+      ButtonsModule.forRoot(),
       PaginationModule.forRoot(),
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),

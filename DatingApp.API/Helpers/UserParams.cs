@@ -20,6 +20,7 @@ namespace DatingApp.API.Helpers
         public string GenderIdentity { get; set; }
         public int MinAge { get; set; } = 18;
         public int MaxAge { get; set; } = 99;
+        public string OrderBy { get; set; }
 
         internal IIncludableQueryable<User, ICollection<Photo>> Where(object p)
         {

@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using DatingApp.API.Models;
+using Microsoft.EntityFrameworkCore.Query;
+
 namespace DatingApp.API.Helpers
 {
     public class UserParams
@@ -11,5 +16,12 @@ namespace DatingApp.API.Helpers
             set { pageSize = (value > MaxPageSize) ? MaxPageSize : value; }
         }
 
+        public int UserId { get; set; }
+        public string GenderIdentity { get; set; }
+
+        internal IIncludableQueryable<User, ICollection<Photo>> Where(object p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

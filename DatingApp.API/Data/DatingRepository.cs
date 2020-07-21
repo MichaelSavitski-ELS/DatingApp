@@ -14,14 +14,15 @@ namespace DatingApp.API.Data
         {
             _context = context;
         }
+
         public void Add<T>(T entity) where T : class
         {
-            _context.Add(entity);
+            throw new System.NotImplementedException();
         }
 
         public void Delete<T>(T entity) where T : class
         {
-            _context.Remove(entity);
+            throw new System.NotImplementedException();
         }
 
         public async Task<Photo> GetMainPhoto(int userId)
@@ -50,7 +51,10 @@ namespace DatingApp.API.Data
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = _context.Users.Include(p => p.Photos);
+            var users = _context.Users.Include(p => p.Photos).AsQueryable();
+
+            users = users.Where(u => u.Id != userParams.UserId);
+            users = users.Where(u => u.GenderIdentity == userParams.GenderIdentity);
 
             return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }

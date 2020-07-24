@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Data
 {
+    //This comment is an arbitrary change to test committing with credentials
     public class DatingRepository : IDatingRepository
     {
         private readonly DataContext _context;

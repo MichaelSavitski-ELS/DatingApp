@@ -1,3 +1,4 @@
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
@@ -60,7 +61,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,

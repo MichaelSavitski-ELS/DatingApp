@@ -12,3 +12,4 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
 console.log('No this should not be here');
+console.log('Oh okay it reverts TO a commit');
